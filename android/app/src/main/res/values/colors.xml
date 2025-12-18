@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales de K'AWIIL ELECT -->
+    <color name="colorPrimary">#121212</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#d4af37</color>
+    <color name="colorGold">#d4af37</color>
+    <color name="colorTeal">#008080</color>
+    <color name="colorOrange">#FF8C00</color>
+    <color name="colorCream">#FFFDD0</color>
+    
+    <!-- Colores de fondo -->
+    <color name="background">#121212</color>
+    <color name="surface">#1e1e1e</color>
+    
+    <!-- Colores de texto -->
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#B0B0B0</color>
+    
+    <!-- Colores para Splash Screen -->
+    <color name="splash_background">#121212</color>
+</resources>

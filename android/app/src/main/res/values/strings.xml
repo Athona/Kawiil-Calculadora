@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">K\'AWIIL ELECT</string>
+    <string name="title_activity_main">K\'AWIIL ELECT</string>
+    <string name="package_name">com.dioscuro.kawiilelect</string>
+    <string name="custom_url_scheme">kawiil</string>
+    <string name="developer_name">Dioscuro Studio</string>
+    <string name="app_description">Calculadora de ingeniería eléctrica con temática maya</string>
+</resources>

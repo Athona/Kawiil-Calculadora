@@ -1,0 +1,410 @@
+/* 1. DEFINICIÓN DE VARIABLES DINÁMICAS */
+:root {
+  --kawiil-bg: #0f0f0f; /* Cambiado a oscuro por defecto para la app */
+  --kawiil-card: #1a1a1a;
+  --kawiil-text: #e0e0e0;
+  --kawiil-gold: #d4af37;
+  --kawiil-accent: #000000;
+  --premium-black: #121212;
+}
+
+/* 2. ESTILOS BASE */
+body {
+  background-color: var(--kawiil-bg) !important;
+  color: var(--kawiil-text) !important;
+  transition: all 0.3s ease;
+}
+
+/* 3. CORRECCIÓN DE FORMULARIOS (Aquí estaba el fallo) */
+.card-gestion {
+  background: var(--premium-black) !important;
+  border-radius: 15px;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  padding: 2rem;
+}
+
+/* Forzar que CUALQUIER texto dentro de la gestión sea claro */
+.card-gestion label,
+.card-gestion h5,
+.card-gestion .form-text {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Inputs y Selects dentro de la zona oscura */
+.card-gestion .form-control,
+.card-gestion .form-select {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+.card-gestion .form-control:focus,
+.card-gestion .form-select:focus {
+  border-color: var(--kawiil-gold) !important;
+  box-shadow: 0 0 0 0.25 row rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Arreglo para las opciones del select en Windows */
+.card-gestion select option {
+  background-color: var(--premium-black) !important;
+  color: white !important;
+}
+
+/* 4. COMPONENTES PREMIUM */
+.premium-card {
+  background-color: var(--kawiil-card) !important;
+  color: var(--kawiil-text) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-top: 4px solid var(--kawiil-gold) !important;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.text-gold {
+  color: var(--kawiil-gold) !important;
+}
+
+/* 5. CONFIGURACIÓN DE IMPRESIÓN (Blanco y Negro puro) */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .premium-card {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+  .text-gold {
+    color: #000 !important;
+    font-weight: bold !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+
+  #print-area {
+    visibility: visible !important;
+    color: black !important;
+  }
+}
+.text-muted {
+  color: var(--kawiil-gold) !important;
+}
+/* VALIDACIÓN DE ENTRADAS */
+.input-error {
+  border: 2px solid #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.1) !important;
+  animation: shake 0.5s ease-in-out;
+}
+
+.input-warning {
+  border: 2px solid #ffc107 !important;
+  background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.result-success {
+  color: #28a745 !important;
+  border-left: 4px solid #28a745 !important;
+}
+
+.result-error {
+  color: #dc3545 !important;
+  border-left: 4px solid #dc3545 !important;
+}
+/* Estilos para el logo */
+.logo-container {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(
+    145deg,
+    rgba(10, 25, 41, 0.9),
+    rgba(26, 54, 93, 0.9)
+  );
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: var(--kawiil-gold);
+}
+
+/* Animación sutil para el logo */
+@keyframes gentle-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+  }
+}
+
+.logo-glow {
+  animation: gentle-glow 3s ease-in-out infinite;
+}
+
+/* Para el PDF */
+.pdf-logo {
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  padding: 10px;
+  background: #0a1929;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-container {
+    transform: scale(0.8);
+  }
+}
+.logo-glow {
+  animation: gentle-glow 3s ease-in-out infinite;
+}
+
+@keyframes gentle-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+  }
+}
+/* Estilos para botones de exportación que funcionen en cualquier tema */
+.btn-export {
+  background-color: var(--kawiil-card, #1e1e1e);
+  color: var(--kawiil-text, #f8f9fa);
+  border: 1px solid var(--kawiil-gold, #d4af37);
+  transition: all 0.3s ease;
+}
+
+.btn-export:hover {
+  background-color: var(--kawiil-gold, #d4af37);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+}
+
+.txt-export:hover {
+  border-color: #3498db;
+  background-color: #3498db;
+}
+
+.json-export:hover {
+  border-color: #2ecc71;
+  background-color: #2ecc71;
+}
+
+.csv-export:hover {
+  border-color: #e74c3c;
+  background-color: #e74c3c;
+}
+
+.btn-pdf-export {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-pdf-export:hover {
+  background: linear-gradient(135deg, #a93226, #c0392b);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.3);
+  color: white;
+}
+
+/* Para tema claro específicamente */
+@media (prefers-color-scheme: light) {
+  .btn-export {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #d4af37;
+  }
+
+  .btn-pdf-export {
+    background: linear-gradient(135deg, #d4af37, #f1c40f);
+    color: #000;
+  }
+}
+/* Estilos para la página de configuración */
+.theme-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent !important;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--kawiil-gold) !important;
+}
+
+.active-premium-link {
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.1),
+    rgba(212, 175, 55, 0.3)
+  ) !important;
+  border-left: 4px solid var(--kawiil-gold) !important;
+  color: var(--kawiil-gold) !important;
+}
+
+/* Estilos para inputs en modo oscuro */
+.bg-dark .form-control,
+.bg-dark .form-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.bg-dark .form-control:focus,
+.bg-dark .form-select:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--kawiil-gold);
+  color: white;
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate__animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeIn {
+  animation-name: fadeInUp;
+}
+/* En tu archivo CSS principal */
+.theme-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-control-color {
+  width: 50px;
+  height: 38px;
+  padding: 3px;
+  border: 1px solid var(--kawiil-gold);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Asegurar que los inputs de color sean visibles */
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 2px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+/* Añade esto a tu archivo CSS principal */
+.color-preview {
+  transition: transform 0.2s ease;
+}
+
+.color-preview:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.color-code {
+  transition: all 0.3s ease;
+  border: 1px solid currentColor;
+}
+
+.color-code:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.theme-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--kawiil-gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.theme-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Mejora para los badges de idioma */
+.btn-outline-warning {
+  border: 2px solid var(--kawiil-gold);
+  color: var(--kawiil-text);
+}
+
+.btn-outline-warning:hover {
+  background-color: var(--kawiil-gold);
+  color: #000;
+  border-color: var(--kawiil-gold);
+}
+
+/* Contraste mejorado para texto */
+.text-contrast {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}

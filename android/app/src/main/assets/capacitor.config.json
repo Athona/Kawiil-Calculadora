@@ -1,0 +1,25 @@
+{
+	"appId": "com.dioscuro.kawiilelect",
+	"appName": "K'AWIIL ELECT",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 3000,
+			"launchAutoHide": true,
+			"backgroundColor": "#121212",
+			"androidSplashResourceName": "splash",
+			"androidScaleType": "CENTER_CROP",
+			"showSpinner": true,
+			"androidSpinnerStyle": "large",
+			"iosSpinnerStyle": "small",
+			"spinnerColor": "#d4af37",
+			"splashFullScreen": true,
+			"splashImmersive": true
+		}
+	},
+	"android": {
+		"allowMixedContent": true,
+		"webContentsDebuggingEnabled": true
+	}
+}
